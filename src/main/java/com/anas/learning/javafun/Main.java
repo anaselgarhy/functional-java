@@ -22,13 +22,13 @@ public class Main {
         );
 
         list.stream()
-                .filter(person -> person.getGender().equals(FEMALE)) // filer
+                .filter(person -> person.gender().equals(FEMALE)) // filer
                 // .collect(Collectors.toList()) // collect the results of the stream to the list
                 .forEach(System.out::println); // iterate throw list and send an every element to that method
 
 
         // or
-        Predicate<Person> personPredicate = person -> person.getGender().equals(FEMALE);
+        Predicate<Person> personPredicate = person -> person.gender().equals(FEMALE);
         final List<?> females = list.stream() // ? = Person
                 .filter(personPredicate) // filer the female
                 .collect(Collectors.toList());
